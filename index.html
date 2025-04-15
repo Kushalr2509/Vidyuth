@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vidyuth 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: #121212; /* You can change this to any solid color like #111, #fff, #1a1a1a, etc. */
+        color: #f0f0f0;
+        position: relative;
+        overflow-x: hidden;
+      }
+      
+
+    /* Animated Dancing Gradient Background */
+  
+
+    @keyframes gradientDance {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      background: #121212;
+      color: white;
+      padding: 0px 0;
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      box-shadow: 0 0 10px rgba(192, 18, 18, 0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00eaff;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #00eaff;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #ff00ff;
+    }
+
+    .countdown {
+        font-size: 2em;
+        background: rgba(255, 255, 255, 0.1); /* <-- this is the background */
+        padding: 10px 20px;
+        display: inline-block;
+        border-radius: 5px;
+        border: 2px solid #00eaff;
+      }
+      
+
+    .events, .schedule {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: #1e1e2f;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ff00ff;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      background: #2a2a3f;
+      color: #fff;
+    }
+
+    button {
+      background: #00eaff;
+      color: #000;
+      border: none;
+      padding: 12px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #00bcd4;
+    }
+
+    footer {
+      background: #121212;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 600px) {
+      nav { flex-direction: column; align-items: flex-start; }
+    }
+    /* Scrollable event section on mobile */
+.events-wrapper {
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  
+  .events {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+  }
+  
+  @media (min-width: 768px) {
+    .events {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  /* Card Flip Effect */
+  .card {
+    background: #1e1e2f;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    transition: transform 0.6s ease, box-shadow 0.3s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: rotateY(5deg) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.4);
+  }
+  
+  /* Event category headings */
+  .category-title {
+    font-size: 1.5em;
+    color: #ff00ff;
+    margin: 40px 0 20px;
+  }
+  
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div><strong>Vidyuth</strong></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#register">Register</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Vidyuth 2025</h1>
+  <div class="countdown" id="countdown">Loading countdown...</div>
+</section>
+
+<section id="about">
+  <h2>About Vidyuth</h2>
+  <p>Vidyuth is the annual cultural and technical extravaganza of Fictional College. A three-day spectacle of electrifying performances, coding battles, innovative tech expos, and unforgettable memories under the stars.</p>
+</section>
+
+<section id="events">
+    <h2>Events</h2>
+    <div class="events-wrapper">
+      <div class="events">
+        <div class="card">
+          <h3><a href="dj-night.html">💃 DJ Night</a></h3>
+          <p>Lose yourself to dance with electrifying beats from top DJs.</p>
+        </div>
+        <div class="card">
+          <h3><a href="concert-night.html">🎤 Concert Night</a></h3>
+          <p>Vibe with live music performances and unforgettable moments.</p>
+        </div>
+        <div class="card">
+          <h3><a href="ethnic-day.html">👗 Ethnic Day</a></h3>
+          <p>Celebrate your culture and heritage in traditional attire.</p>
+        </div>
+        <div class="card">
+          <h3><a href="glow-party.html">🌈 Glow Party</a></h3>
+          <p>Experience the neon lights, glow paint, and electrifying music.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section id="schedule">
+  <h2>Schedule</h2>
+  <div class="schedule">
+    <div class="card">
+      <h3>Day 1</h3>
+      <p>Inauguration, Solo Singing, Code Clash Prelims, DJ Night.</p>
+    </div>
+    <div class="card">
+      <h3>Day 2</h3>
+      <p>Workshops, Innovation Expo, Dance Showdown, Movie Screening.</p>
+    </div>
+    <div class="card">
+      <h3>Day 3</h3>
+      <p>Finals, Band Wars, Award Ceremony & Grand Finale.</p>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+    <h2>Registration Form</h2>
+    <form id="registrationForm">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="text" placeholder="College Name" required />
+      <textarea rows="4" placeholder="Any Queries?"></textarea>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+  
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: contact@vidyuthfest.edu | Phone: +91-9876543210</p>
+  <p>Fictional College, Dreamland Avenue, Cityville</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Vidyuth. All rights reserved.</p>
+</footer>
+
+<script>
+  // Countdown timer
+  const countdown = document.getElementById('countdown');
+  const eventDate = new Date("May 10, 2025 10:00:00").getTime();
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      countdown.innerHTML = "The event has started!";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+<script>
+    // Listen for the form submission
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents the default form submission
+  
+      // Show the success alert
+      alert('Registration Successful!');
+  
+      // Optionally, you can reset the form after submission
+      document.getElementById('registrationForm').reset();
+    });
+  </script>
+
+</body>
+</html>
